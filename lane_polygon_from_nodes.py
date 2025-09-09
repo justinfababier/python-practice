@@ -51,10 +51,10 @@ def main():
     # Array of nodes in (longitude, latitude).
     # This set of nodes describes a westbound lane approaching 
     # the University & Iowa intersection in Riverside, California.
-    nodes = [(-117.3396957, 33.9757438),    # Stopbar node
-             (-117.3392196, 33.9757416),
-             (-117.3389018, 33.9757471),
-             (-117.3386457, 33.9757505)]
+    nodes = np.array([(-117.3396957, 33.9757438),    # Stopbar node
+                      (-117.3392196, 33.9757416),
+                      (-117.3389018, 33.9757471),
+                      (-117.3386457, 33.9757505)])
     
     width = 3.658  # meters (approximate 12 feet)
 
