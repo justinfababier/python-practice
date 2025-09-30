@@ -10,7 +10,7 @@ class ExtendedKalmanFilter:
         """
         Initialize the Extended Kalman Filter (EKF).
 
-        Parameters
+        Args:
         ----------
         x0 : array_like
             Initial state vector (shape: n,).
@@ -57,7 +57,7 @@ class ExtendedKalmanFilter:
         Compute the numerical Jacobian of the state transition function f
         with respect to the state vector x using finite differences.
 
-        Parameters
+        Args:
         ----------
         x : array_like
             Current state vector (shape: n,).
@@ -92,7 +92,7 @@ class ExtendedKalmanFilter:
         Compute the numerical Jacobian of the measurement function h
         with respect to the state vector x using finite differences.
 
-        Parameters
+        Args:
         ----------
         x : array_like
             Current state vector (shape: n,).
@@ -128,7 +128,7 @@ class ExtendedKalmanFilter:
         transition function `f` and updates the state covariance `P` using
         the Jacobian of `f`.
 
-        Parameters
+        Args:
         ----------
         u : array_like, optional
             Control input vector applied at this step. Defaults to None.
@@ -160,7 +160,7 @@ class ExtendedKalmanFilter:
         estimate, computing the Kalman gain and updating both the state
         vector `x` and covariance `P`.
 
-        Parameters
+        Args:
         ----------
         z : array_like
             Measurement vector at the current step.
@@ -200,7 +200,7 @@ class ExtendedKalmanFilter:
         """
         Set the process noise covariance matrix.
 
-        Parameters
+        Args:
         ----------
         Q : ndarray
             Process noise covariance matrix (shape: n x n).
@@ -217,7 +217,7 @@ class ExtendedKalmanFilter:
         """
         Set the measurement noise covariance matrix.
 
-        Parameters
+        Args:
         ----------
         R : ndarray
             Measurement noise covariance matrix (shape: m x m).
