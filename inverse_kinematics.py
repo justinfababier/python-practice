@@ -24,7 +24,7 @@ def inverse_kinematics(position) -> list[float]:
     z = position[2]
 
     # Solving for joint 1
-    joint1 = np.atan2(y, x) # Location of joint 1
+    joint1 = np.atan2(y, x) # Angle of joint 1
 
     # Solving for joint 2
     r = np.sqrt((x ** 2) + (y ** 2))
@@ -33,14 +33,14 @@ def inverse_kinematics(position) -> list[float]:
     k = np.sqrt((link3x ** 2) + (link3z ** 2))
     alpha = arccos_clamped(link3z / k)
     beta_1 = arccos_clamped(((a ** 2) + (k ** 2) - (link4x ** 2)) / (2 * a * k))
-    joint2 = (np.pi / 2) - alpha - beta_1 - gamma
+    joint2 = (np.pi / 2) - alpha - beta_1 - gamma   # Angle of joint 2
 
     # Solving for joint 3
     eta = np.atan(link3z / link3x)
     beta_2 = arccos_clamped(((k ** 2) + (link4x ** 2) - (a ** 2)) / (2 * k * link4x))
-    joint3 = beta_2 - (np.pi - eta)
+    joint3 = beta_2 - (np.pi - eta) # Angle of joint 3
     
-    return [joint1, joint2, joint3]
+    return [joint1, joint2, joint3] # Return angles as list[float]
 
 def main():
     position = [0.2, 0.0, 0.254]
