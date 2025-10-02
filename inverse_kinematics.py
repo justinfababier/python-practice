@@ -30,7 +30,7 @@ def inverse_kinematics(position) -> list[float]:
     r = np.sqrt((x ** 2) + (y ** 2))
     a = np.sqrt((r ** 2) + ((z - link1z - link2z) ** 2))
     gamma = arccos_clamped(r / a)
-    k = 0.1581
+    k = np.sqrt((link3x ** 2) + (link3z ** 2))
     alpha = arccos_clamped(link3z / k)
     beta_1 = arccos_clamped(((a ** 2) + (k ** 2) - (link4x ** 2)) / (2 * a * k))
     joint2 = (np.pi / 2) - alpha - beta_1 - gamma
