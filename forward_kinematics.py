@@ -39,7 +39,6 @@ def forward_kinematics(joints) -> list[float]:
     T_04 = S1_skewsym @ S2_skewsym @ S3_skewsym @ M
 
     # Extract end effector position from the transformation matrix
-    print()
     x = T_04[0, 3]
     y = T_04[1, 3]
     z = T_04[2, 3]
